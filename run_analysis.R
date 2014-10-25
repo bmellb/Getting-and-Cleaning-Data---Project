@@ -1,5 +1,7 @@
 RunAnalysis <- function()
 {
+        Path <- getwd()
+        
         ## These parameters from the README file that came with the original data set.
         RecordLength <- 561
         NumberOfSubjects <- 30
@@ -13,14 +15,15 @@ RunAnalysis <- function()
         ## for which the features.txt names of those measurements contained either 
         ## the word "mean" or the word "std". Visual inspection of the selected
         ## features did not show obvious wrong choices.
-        setwd("G://Getting and Cleaning Data/getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset")
+        setwd("./getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset")
         Features <- read.table("Features.txt", colClasses="character")
         Index <- grep("mean", Features[,2], fixed=TRUE)
         Index <- append(Index, grep("std", Features[,2], fixed=TRUE))
         NOF <- length(Index) ## Number of selected features)
         
         ## Read in the "test" data.
-        setwd("G://Getting and Cleaning Data/getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset/test")
+        setwd(Path)
+        setwd("./getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset/test")
         X_test <- scan("X_test.txt")
         subject_test <- scan("subject_test.txt", what=integer())
         y_test <- scan("y_test.txt", what=character())
@@ -43,7 +46,8 @@ RunAnalysis <- function()
         
         ## Read the "train" data and create a "train" frame with subject, activity 
         ## and selected features.
-        setwd("G://Getting and Cleaning Data/getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset/train")
+        setwd(Path)
+        setwd("./getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset/train")
         X_train <- scan("X_train.txt")
         subject_train <- scan("subject_train.txt", what=integer())
         y_train <- scan("y_train.txt", what=character())
@@ -105,5 +109,6 @@ RunAnalysis <- function()
 
                 }
         }
+        setwd(Path)
         write.table(TidyFrame, row.names=FALSE, file="Tidy.txt")
 }
