@@ -2,7 +2,7 @@
 title: "CodeBook"
 author: "Bart Mellenbergh"
 date: "Sunday, October 26, 2014"
-output: word_document
+output: html_document
 ---
 
 **Study design**
