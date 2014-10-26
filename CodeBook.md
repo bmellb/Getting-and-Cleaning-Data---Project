@@ -2,11 +2,11 @@
 title: "CodeBook"
 author: "Bart Mellenbergh"
 date: "Sunday, October 26, 2014"
-output: html_document
+output: word_document
 ---
 
-Study design
-------------
+**Study design**
+
 The data for this project has been obtained by downloading 
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip.
 
@@ -35,31 +35,35 @@ done more compactly (a first exmaple is given in the R script itself) but at
 the expense of making the code much more difficult to read.
 
 
-Code book
----------
+**Code book**
+
 
 The combined dataframe and tidy dataframe contain the following columns:
 
-Subject                 A string representing a number that identifies the subject 
-                        (person) for whom activities have been measured. For
-                        this particular study this variable ranges from 1 to 30.
-                        
-Activity                A string representing the activity a subject has been asked
-                        to do and for which measurements have been taken.
-                        The activities are: "Walking", "Walking upstairs",
-                        "Walking downstairs", "Sitting", "Standing" and "Laying down".
+*Subject*               
 
-tBodyAcc-mean()-X       The mean and standard deviations extracted from the
-tBodyAcc-mean()-Y       original datasets. Features are normalized and 
-tBodyAcc-mean()-Z       bounded within [-1,1].The angular velocity means
-tGravityAcc-mean()-X    and standard deviations are in radians/second
-tGravityAcc-mean()-Y    (feautures that contain 'Gyro' in their description).
-tGravityAcc-mean()-Z    The acceleration feautures ('Acc' in their variable
-tBodyAccJerk-mean()-X   name) are in standard gravity units 'g'.Frequencies
-tBodyAccJerk-mean()-Y   (variable name contains 'Freq') are in cycles/second (Hz).
-tBodyAccJerk-mean()-Z   For the final tidy dataframe and dataset the mean
-tBodyGyro-mean()-X      has been taken for these variables for every
-tBodyGyro-mean()-Y      subject-activity pair.
+A string representing a number that identifies the subject 
+(person) for whom activities have been measured. For
+this particular study this variable ranges from 1 to 30.
+                        
+*Activity*              
+
+A string representing the activity a subject has been asked
+to do and for which measurements have been taken.
+The activities are: "Walking", "Walking upstairs",
+"Walking downstairs", "Sitting", "Standing" and "Laying down".
+
+*tBodyAcc-mean()-X*      
+tBodyAcc-mean()-Y   
+tBodyAcc-mean()-Z       
+tGravityAcc-mean()-X    
+tGravityAcc-mean()-Y    
+tGravityAcc-mean()-Z    
+tBodyAccJerk-mean()-X   
+tBodyAccJerk-mean()-Y   
+tBodyAccJerk-mean()-Z   
+tBodyGyro-mean()-X      
+tBodyGyro-mean()-Y      
 tBodyGyro-mean()-Z
 tBodyGyroJerk-mean()-X
 tBodyGyroJerk-mean()-Y
@@ -128,3 +132,15 @@ fBodyAccMag-std()
 fBodyBodyAccJerkMag-std()
 fBodyBodyGyroMag-std()
 fBodyBodyGyroJerkMag-std()
+
+The mean and standard deviations extracted from the
+original datasets. Features are normalized and 
+bounded within [-1,1].The angular velocity means
+and standard deviations are in radians/second
+(feautures that contain 'Gyro' in their description).
+The acceleration feautures ('Acc' in their variable
+name) are in standard gravity units 'g'.Frequencies
+(variable name contains 'Freq') are in cycles/second (Hz).
+For the final tidy dataframe and dataset the mean
+has been taken for these variables for every
+subject-activity pair.
